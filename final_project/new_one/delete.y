@@ -7,7 +7,7 @@
 %}
 
 
-%token DELETE FROM IDENTIFIER WHERE CONDITIONAL_OP RELATIONAL_OP SEMICOLON TEXT NUMBER NEWLINE
+%token DELETE FROM IDENTIFIER WHERE CONDITIONAL_OP RELATIONAL_OP SEMICOLON TEXT NUMBER NEWLINE AS
 
 
 
@@ -20,21 +20,21 @@ line: delete {printf("Syntax Correct\n");
 
 delete : DELETE from | error {yyerror(" : Did you mean \"DELETE\" ? \n"); return 1; };
 
-from : FROM table where | FROM table semicolon NEWLINE | error {yyerror("   : Did you mean \" FROM \" ? \n");}; 
+from : FROM table where | FROM table semicolon NEWLINE |  error {yyerror("   : Did you mean \" FROM \" ? \n"); return 1; }; 
 
-table : IDENTIFIER | error {yyerror(" : table name is missing.\n");};
+table : IDENTIFIER | IDENTIFIER AS IDENTIFIER | error {yyerror(" : table name is missing.\n"); return 1; };
 
 where : WHERE condition semicolon NEWLINE | 
-error {yyerror(" : Did you mean \" WHERE \" ? \n");};
+error {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; };
 
-condition : IDENTIFIER CONDITIONAL_OP IDENTIFIER |
-            IDENTIFIER CONDITIONAL_OP TEXT |
-            IDENTIFIER CONDITIONAL_OP NUMBER |
-            IDENTIFIER CONDITIONAL_OP IDENTIFIER RELATIONAL_OP condition | 
-            IDENTIFIER CONDITIONAL_OP TEXT RELATIONAL_OP condition |
-            IDENTIFIER CONDITIONAL_OP NUMBER RELATIONAL_OP condition |
-            NUMBER CONDITIONAL_OP NUMBER |
-            NUMBER CONDITIONAL_OP NUMBER RELATIONAL_OP condition | 
+condition : IDENTIFIER RELATIONAL_OP IDENTIFIER |
+            IDENTIFIER RELATIONAL_OP TEXT |
+            IDENTIFIER RELATIONAL_OP NUMBER |
+            IDENTIFIER RELATIONAL_OP IDENTIFIER CONDITIONAL_OP condition | 
+            IDENTIFIER RELATIONAL_OP TEXT CONDITIONAL_OP condition |
+            IDENTIFIER RELATIONAL_OP NUMBER CONDITIONAL_OP condition |
+            NUMBER RELATIONAL_OP NUMBER |
+            NUMBER RELATIONAL_OP NUMBER CONDITIONAL_OP condition | 
 
             error {
                 

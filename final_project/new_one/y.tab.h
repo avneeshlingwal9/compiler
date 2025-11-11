@@ -63,7 +63,8 @@ extern int yydebug;
     SEMICOLON = 264,               /* SEMICOLON  */
     TEXT = 265,                    /* TEXT  */
     NUMBER = 266,                  /* NUMBER  */
-    NEWLINE = 267                  /* NEWLINE  */
+    NEWLINE = 267,                 /* NEWLINE  */
+    AS = 268                       /* AS  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -82,6 +83,7 @@ extern int yydebug;
 #define TEXT 265
 #define NUMBER 266
 #define NEWLINE 267
+#define AS 268
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
