@@ -1,0 +1,25 @@
+DELETE FROM customers
+DELETE FROM customers WHERE id = 10;
+DELETE FROM customers WHERE email = "test@example.com";
+DELETE FROM customers WHERE status = 'inactive';
+DELETE FROM customers WHERE customers.id = 5;
+DELETE FROM customers AS c WHERE c.id = 3;
+DELETE FROM orders WHERE status = "shipped" AND total > 100;
+DELETE FROM users WHERE last_login < 500 OR name = "guest";
+DELETE FROM users WHERE NOT name = "admin";
+DELETE FROM products WHERE price > 10;
+DELETE FROM products WHERE price != 0;
+DELETE FROM products WHERE name LIKE "test%";
+DELETE FROM logs WHERE type = "ERROR" AND code = 500 OR user = "root";
+delete FROM customers;
+FROM customers WHERE id = 1;
+DELETE from customers;
+DELETE customers WHERE id = 1;
+DELETE FROM customers where id = 1;
+DELETE FROM WHERE id = 1;
+DELETE FROM AS c WHERE c.id = 1; 
+DELETE FROM customers 
+DELETE FROM customers WHERE id = 1 
+DELETE FROM customers WHERE id 1; 
+DELETE FROM customers WHERE id = ;
+DELETE FROM customers WHERE = 1;

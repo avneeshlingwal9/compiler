@@ -1,7 +1,11 @@
+digit [0-9]
+alphabets [a-zA-Z]
+identifier ({alphabets}|{digit}|"_"|"$")
+
 %{
     #include <stdio.h>
     #include "y.tab.h"
-
+    
 %}
 
 
@@ -15,11 +19,13 @@
 
 "AS"    return AS; 
 
-"AND"|"OR"|"NOT" return CONDITIONAL_OP;
+"AND"|"OR" return CONDITIONAL_OP;
 
-"LIKE" | "IN"    return RELATIONAL_OP;
+"NOT" return NOT; 
 
-[0-9]+     return NUMBER;
+"LIKE"|"IN"    return RELATIONAL_OP;
+
+{digit}+     return NUMBER;
 
 [\"](.)+[\"] return TEXT;
 
@@ -34,9 +40,9 @@
 
 ";"         return SEMICOLON;
 
-([a-zA-Z]+)|([a-zA-Z0-9_$][a-zA-Z_$][a-zA-Z0-9_$]+) return IDENTIFIER;
+({alphabets}+)|({identifier})[a-zA-Z_$]({identifier}+) return IDENTIFIER;
 
-(([a-zA-Z]+)|([a-zA-Z0-9_$][a-zA-Z_$][a-zA-Z0-9_$]*))["."][a-zA-Z0-9_$]+  return IDENTIFIER; 
+(({alphabets}+)|({identifier}[a-zA-Z_$]{identifier}*))["."]{identifier}+  return IDENTIFIER; 
 
 
 \n          return NEWLINE;

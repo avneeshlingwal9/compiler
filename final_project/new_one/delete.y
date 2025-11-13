@@ -3,18 +3,20 @@
     #include <stdlib.h>
     void yyerror(const char* s);
     int yylex(void);
+    
 
 %}
 
 
-%token DELETE FROM IDENTIFIER WHERE CONDITIONAL_OP RELATIONAL_OP SEMICOLON TEXT NUMBER NEWLINE AS
+%token DELETE FROM IDENTIFIER WHERE CONDITIONAL_OP RELATIONAL_OP SEMICOLON TEXT NUMBER NEWLINE AS NOT
 
 
 
 %%
 
-line: delete {printf("Syntax Correct\n"); 
 
+
+line: delete {printf("Syntax Correct\n"); 
     return 0;
 };
 
@@ -35,6 +37,7 @@ condition : IDENTIFIER RELATIONAL_OP IDENTIFIER |
             IDENTIFIER RELATIONAL_OP NUMBER CONDITIONAL_OP condition |
             NUMBER RELATIONAL_OP NUMBER |
             NUMBER RELATIONAL_OP NUMBER CONDITIONAL_OP condition | 
+            NOT condition | 
 
             error {
                 
@@ -49,8 +52,7 @@ semicolon : SEMICOLON | error {yyerror(" : Missing semicolon \";\" \n"); return 
 
 int main(void){
 
-
-    printf("mysql > ");
+    printf("mysql>");
     yyparse();
     return 0; 
 
@@ -63,5 +65,5 @@ void yyerror(const char* s){
 }
 
 int yywrap(){
-    return 1; 
+    return 0; 
 }
