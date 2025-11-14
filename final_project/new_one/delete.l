@@ -1,6 +1,12 @@
+
+/* Defining neccessary definitions. */
+/*  So only digit cannot be an identifier, must have any other character after it, but identifier can be of only alphabet and $ is omitted, because it is deprecated to use $ can first letter of identifier. */
+
+
 digit [0-9]
 alphabets [a-zA-Z]
-identifier ({alphabets}|{digit}|"_"|"$")
+alphanum ({alphabets}|{digit}|"_"|"$")
+identifier ({digit}[a-zA-Z_$]|[a-zA-Z_])({alphanum}*) 
 
 %{
     #include <stdio.h>
@@ -11,19 +17,22 @@ identifier ({alphabets}|{digit}|"_"|"$")
 
 %%
 
-"DELETE" return DELETE;
+(d|D)(e|E)(l|L)(e|E)(t|T)(e|E)  return DELETE;
 
-"FROM"   return FROM;
+(f|F)(r|R)(o|O)(m|M)   return FROM;
 
-"WHERE" return WHERE;
+(w|W)(h|H)(e|E)(r|R)(e|E) return WHERE;
 
-"AS"    return AS; 
+(a|A)(s|S)    return AS; 
 
-"AND"|"OR" return CONDITIONAL_OP;
+(a|A)(n|N)(d|D)|(o|O)(r|R) return CONDITIONAL_OP;  /* NOT is not included, because it is a unary operator and to handle the case where the 
+    
+                                conditions can be specified as (NOT condition).  */
 
-"NOT" return NOT; 
 
-"LIKE"|"IN"    return RELATIONAL_OP;
+(n|N)(o|O)(t|T) return NOT; 
+
+(l|L)(i|I)(k|K)(e|E)|(I|i)(N|n)    return RELATIONAL_OP;
 
 {digit}+     return NUMBER;
 
@@ -40,9 +49,11 @@ identifier ({alphabets}|{digit}|"_"|"$")
 
 ";"         return SEMICOLON;
 
-({alphabets}+)|({identifier})[a-zA-Z_$]({identifier}+) return IDENTIFIER;
+{identifier} return IDENTIFIER; 
 
-(({alphabets}+)|({identifier}[a-zA-Z_$]{identifier}*))["."]{identifier}+  return IDENTIFIER; 
+
+
+{identifier}["."]{identifier}  return IDENTIFIER; // To handle the case where table_name.column_name
 
 
 \n          return NEWLINE;

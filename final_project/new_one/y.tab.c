@@ -67,7 +67,8 @@
 
 
 /* First part of user prologue.  */
-#line 1 "delete.y"
+#line 6 "delete.y"
+
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -76,7 +77,7 @@
     
 
 
-#line 80 "y.tab.c"
+#line 81 "y.tab.c"
 
 # ifndef YY_CAST
 #  ifdef __cplusplus
@@ -581,9 +582,9 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_int8 yyrline[] =
 {
-       0,    19,    19,    23,    23,    25,    25,    25,    27,    27,
-      27,    29,    30,    32,    33,    34,    35,    36,    37,    38,
-      39,    40,    42,    48,    48
+       0,    69,    69,    77,    77,    85,    85,    85,    94,    94,
+      94,    98,    99,   110,   111,   112,   113,   114,   115,   116,
+     117,   118,   120,   126,   126
 };
 #endif
 
@@ -641,8 +642,8 @@ static const yytype_int8 yydefact[] =
        0,     4,     0,     0,     2,     7,     0,     3,     1,    10,
        8,     0,     0,    12,     0,    23,     5,     0,     9,    22,
        0,     0,     0,     0,     6,     0,     0,    21,    24,     0,
-      13,    14,    15,    19,    11,     0,     0,     0,     0,    16,
-      17,    18,    20
+      13,    14,    15,    16,    11,     0,     0,     0,     0,    17,
+      18,    19,    20
 };
 
 /* YYPGOTO[NTERM-NUM].  */
@@ -699,7 +700,7 @@ static const yytype_int8 yyr1[] =
 static const yytype_int8 yyr2[] =
 {
        0,     2,     1,     2,     1,     3,     4,     1,     1,     3,
-       1,     4,     1,     3,     3,     3,     5,     5,     5,     3,
+       1,     4,     1,     3,     3,     3,     3,     5,     5,     5,
        5,     2,     1,     1,     1
 };
 
@@ -1164,55 +1165,57 @@ yyreduce:
   switch (yyn)
     {
   case 2: /* line: delete  */
-#line 19 "delete.y"
+#line 69 "delete.y"
              {printf("Syntax Correct\n"); 
+
     return 0;
+
 }
-#line 1172 "y.tab.c"
+#line 1175 "y.tab.c"
     break;
 
   case 4: /* delete: error  */
-#line 23 "delete.y"
+#line 77 "delete.y"
                              {yyerror(" : Did you mean \"DELETE\" ? \n"); return 1; }
-#line 1178 "y.tab.c"
+#line 1181 "y.tab.c"
     break;
 
   case 7: /* from: error  */
-#line 25 "delete.y"
+#line 85 "delete.y"
                                                                 {yyerror("   : Did you mean \" FROM \" ? \n"); return 1; }
-#line 1184 "y.tab.c"
+#line 1187 "y.tab.c"
     break;
 
   case 10: /* table: error  */
-#line 27 "delete.y"
+#line 94 "delete.y"
                                                       {yyerror(" : table name is missing.\n"); return 1; }
-#line 1190 "y.tab.c"
+#line 1193 "y.tab.c"
     break;
 
   case 12: /* where: error  */
-#line 30 "delete.y"
+#line 99 "delete.y"
       {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; }
-#line 1196 "y.tab.c"
+#line 1199 "y.tab.c"
     break;
 
   case 22: /* condition: error  */
-#line 42 "delete.y"
+#line 120 "delete.y"
                   {
                 
                 yyerror(" : Incorrect Condtion \n");
                 return 1; 
             }
-#line 1206 "y.tab.c"
+#line 1209 "y.tab.c"
     break;
 
   case 24: /* semicolon: error  */
-#line 48 "delete.y"
+#line 126 "delete.y"
                               {yyerror(" : Missing semicolon \";\" \n"); return 1; }
-#line 1212 "y.tab.c"
+#line 1215 "y.tab.c"
     break;
 
 
-#line 1216 "y.tab.c"
+#line 1219 "y.tab.c"
 
       default: break;
     }
@@ -1405,7 +1408,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 51 "delete.y"
+#line 129 "delete.y"
 
 
 int main(void){
@@ -1423,5 +1426,5 @@ void yyerror(const char* s){
 }
 
 int yywrap(){
-    return 0; 
+    return 1; 
 }

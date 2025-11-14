@@ -360,15 +360,15 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[63] =
+static const flex_int16_t yy_accept[62] =
     {   0,
         0,    0,   24,   22,   21,   20,   21,   22,   22,   22,
-       22,    8,   17,   11,   15,   12,   18,   18,   18,   18,
-       18,   18,   18,   18,   18,   16,    0,    0,    0,    8,
-       13,   14,    0,   18,   18,    4,   18,   18,    7,   18,
-       18,    5,   18,    9,   18,   10,   19,   18,    5,   18,
-       18,   18,    6,   18,   18,    2,    7,   18,   18,    3,
-        1,    0
+        8,   17,   11,   15,   12,   18,   18,   18,   18,   18,
+       18,   18,   18,   18,   16,    0,    0,   18,    8,   13,
+       14,    0,   18,   18,    4,   18,   18,    7,   18,   18,
+        5,   18,    9,   10,    0,   19,    5,   18,   18,   18,
+        6,   18,   19,   18,    2,    7,   18,   18,    3,    1,
+        0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -406,180 +406,94 @@ static const YY_CHAR yy_ec[256] =
 static const YY_CHAR yy_meta[47] =
     {   0,
         1,    1,    2,    1,    1,    3,    4,    1,    3,    5,
-        1,    1,    1,    1,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4,    4,    4,    4,    4,
-        4,    4,    4,    4,    4,    4
+        1,    1,    1,    1,    5,    5,    5,    5,    5,    5,
+        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
+        5,    5,    5,    5,    5,    5,    5,    5,    5,    5,
+        5,    5,    5,    5,    5,    5
     } ;
 
-static const flex_int16_t yy_base[70] =
+static const flex_int16_t yy_base[68] =
     {   0,
-        0,    0,  103,  589,  589,  589,  589,   83,    0,    0,
-        0,   83,  589,   79,  589,   73,   41,   45,   49,   64,
-       53,   68,   91,   81,   95,  589,   75,   55,   71,   53,
-      589,  589,    0,  104,  130,  135,  161,  195,  142,  232,
-      265,  147,  305,   51,   59,   45,    0,  176,  181,  334,
-      363,  398,  187,  427,  465,  204,  213,  505,  534,  218,
-      224,  589,  568,   45,  573,  576,  578,  580,  583
+        0,    0,  155,  200,  200,  200,  200,  128,    0,    0,
+      120,  200,  116,  200,  112,   41,   42,   43,   47,   48,
+       49,   53,   54,   58,  200,  115,  105,   59,   94,  200,
+      200,   82,   66,   74,   78,   87,   92,   93,   94,   99,
+      100,  105,   82,   68,  105,    0,  111,  113,  118,  127,
+      129,  137,    0,  131,  142,  143,  144,  148,  150,  159,
+      200,  182,  187,  189,  192,   66,  194
     } ;
 
-static const flex_int16_t yy_def[70] =
+static const flex_int16_t yy_def[68] =
     {   0,
-       62,    1,   62,   62,   62,   62,   62,   62,   63,   64,
-       65,   64,   62,   62,   62,   62,   66,   66,   66,   66,
-       66,   66,   66,   66,   66,   62,   63,   67,   65,   62,
-       62,   62,   68,   69,   69,   69,   69,   69,   69,   69,
-       69,   69,   69,   63,   67,   65,   68,   69,   69,   69,
-       69,   69,   69,   69,   69,   69,   69,   69,   69,   69,
-       69,    0,   62,   62,   62,   62,   62,   62,   62
+       61,    1,   61,   61,   61,   61,   61,   61,   62,   63,
+       64,   61,   61,   61,   61,   65,   65,   65,   65,   65,
+       65,   65,   65,   65,   61,   62,   63,   65,   61,   61,
+       61,   66,   65,   65,   65,   65,   65,   65,   65,   65,
+       65,   65,   62,   63,   66,   67,   65,   65,   65,   65,
+       65,   65,   67,   65,   65,   65,   65,   65,   65,   65,
+        0,   61,   61,   61,   61,   61,   61
     } ;
 
-static const flex_int16_t yy_nxt[636] =
+static const flex_int16_t yy_nxt[247] =
     {   0,
-        4,    5,    6,    7,    8,    9,   10,   11,    4,   12,
-       13,   14,   15,   16,   17,   18,   19,   18,   20,   18,
-       21,   18,   22,   18,   23,   24,   18,   18,   18,   25,
-       10,   17,   19,   18,   20,   18,   21,   18,   22,   18,
-       23,   24,   18,   18,   18,   25,   33,   28,   28,   33,
-       33,   28,   46,   33,   33,   28,   44,   33,   33,   28,
-       33,   33,   30,   33,   33,   35,   37,   33,   36,   33,
-       28,   28,   33,   33,   28,   28,   33,   39,   46,   28,
-       44,   35,   37,   28,   36,   32,   33,   28,   40,   33,
-       38,   31,   30,   39,   28,   26,   33,   28,   28,   33,
+        4,    5,    6,    7,    8,    9,    4,   10,    4,   11,
+       12,   13,   14,   15,   16,   17,   18,   17,   19,   17,
+       20,   17,   21,   17,   22,   23,   17,   17,   17,   24,
+       17,   16,   18,   17,   19,   17,   20,   17,   21,   17,
+       22,   23,   17,   17,   17,   24,   32,   32,   32,   32,
+       32,   32,   32,   32,   32,   32,   32,   32,   32,   32,
+       36,   32,   32,   32,   32,   34,   32,   32,   35,   39,
+       46,   32,   38,   37,   32,   44,   36,   42,   40,   32,
+       41,   34,   32,   32,   35,   39,   32,   43,   38,   37,
+       47,   45,   32,   42,   40,   32,   41,   32,   32,   32,
 
-       33,   28,   62,   33,   40,   62,   38,   42,   62,   33,
-       45,   28,   33,   45,   43,   62,   41,   62,   62,   62,
-       62,   28,   62,   42,   62,   28,   62,   62,   62,   62,
-       43,   62,   41,   62,   45,   33,   45,   62,   33,   45,
-       33,   45,   62,   33,   45,   62,   49,   33,   45,   62,
-       33,   45,   33,   45,   62,   33,   45,   62,   62,   62,
-       45,   62,   49,   62,   62,   45,   33,   45,   62,   33,
-       45,   62,   45,   62,   62,   62,   62,   45,   62,   62,
-       62,   33,   45,   50,   33,   45,   33,   45,   62,   33,
-       45,   45,   33,   45,   62,   33,   45,   62,   62,   50,
+       32,   32,   32,   29,   32,   32,   47,   32,   32,   48,
+       32,   46,   44,   32,   61,   50,   32,   49,   32,   32,
+       43,   32,   52,   32,   31,   48,   32,   51,   30,   29,
+       54,   50,   32,   49,   32,   32,   32,   32,   52,   32,
+       25,   55,   32,   51,   56,   32,   54,   32,   32,   32,
+       32,   32,   32,   32,   61,   32,   32,   55,   32,   58,
+       56,   59,   61,   57,   32,   60,   61,   32,   61,   61,
+       61,   61,   61,   61,   61,   58,   61,   59,   61,   57,
+       61,   60,   26,   61,   26,   26,   26,   27,   61,   27,
+       27,   27,   28,   28,   33,   33,   33,   53,   53,    3,
 
-       33,   45,   62,   33,   45,   62,   45,   62,   62,   33,
-       45,   45,   33,   45,   62,   62,   62,   45,   33,   45,
-       51,   33,   45,   33,   45,   45,   33,   45,   62,   33,
-       45,   62,   33,   45,   45,   62,   51,   33,   45,   62,
-       33,   45,   62,   45,   62,   62,   62,   62,   45,   62,
-       62,   62,   62,   52,   45,   62,   62,   62,   62,   62,
-       62,   62,   45,   62,   62,   62,   62,   62,   62,   52,
-       33,   45,   62,   33,   45,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   53,   62,   45,   62,   62,   62,   62,
-
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   53,
-       33,   45,   62,   33,   45,   62,   62,   62,   62,   62,
-       62,   62,   54,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   45,   62,   62,   54,   33,
-       45,   62,   33,   45,   62,   62,   62,   62,   62,   62,
-       62,   55,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   45,   62,   62,   55,   33,   45,
-       62,   33,   45,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   56,   62,   62,   62,
-       62,   62,   62,   45,   62,   62,   62,   62,   62,   62,
-
-       62,   62,   56,   33,   45,   62,   33,   45,   62,   62,
-       62,   62,   62,   62,   62,   57,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   45,   62,
-       62,   57,   33,   45,   62,   33,   45,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   58,   62,   62,   62,   45,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   58,
-       33,   45,   62,   33,   45,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   59,   62,   45,   62,   62,   62,   62,
-
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   59,
-       33,   45,   62,   33,   45,   62,   62,   62,   62,   62,
-       62,   62,   60,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   45,   62,   62,   60,   33,
-       45,   62,   33,   45,   62,   62,   62,   62,   62,   62,
-       62,   61,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   45,   62,   62,   61,   27,   62,
-       27,   27,   27,   29,   62,   29,   29,   29,   34,   34,
-       45,   45,   45,   47,   47,   48,   48,   48,    3,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62
+       61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
+       61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
+       61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
+       61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
+       61,   61,   61,   61,   61,   61
     } ;
 
-static const flex_int16_t yy_chk[636] =
+static const flex_int16_t yy_chk[247] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,   17,   17,   64,   17,
-       18,   18,   46,   18,   19,   19,   44,   19,   21,   21,
-       28,   21,   30,   28,   45,   17,   19,   45,   17,   20,
-       20,   17,   20,   22,   22,   18,   22,   21,   29,   19,
-       27,   17,   19,   21,   17,   16,   24,   24,   22,   24,
-       20,   14,   12,   21,   20,    8,   23,   23,   22,   23,
+        1,    1,    1,    1,    1,    1,   16,   17,   18,   16,
+       17,   18,   19,   20,   21,   19,   20,   21,   22,   23,
+       18,   22,   23,   24,   28,   16,   24,   28,   16,   21,
+       66,   33,   20,   19,   33,   44,   18,   24,   22,   34,
+       23,   16,   34,   35,   16,   21,   35,   43,   20,   19,
+       34,   32,   36,   24,   22,   36,   23,   37,   38,   39,
 
-       25,   25,    3,   25,   22,    0,   20,   24,    0,   34,
-       34,   24,   34,   34,   25,    0,   23,    0,    0,    0,
-        0,   23,    0,   24,    0,   25,    0,    0,    0,    0,
-       25,    0,   23,    0,   34,   35,   35,    0,   35,   35,
-       36,   36,    0,   36,   36,    0,   35,   39,   39,    0,
-       39,   39,   42,   42,    0,   42,   42,    0,    0,    0,
-       35,    0,   35,    0,    0,   36,   37,   37,    0,   37,
-       37,    0,   39,    0,    0,    0,    0,   42,    0,    0,
-        0,   48,   48,   37,   48,   48,   49,   49,    0,   49,
-       49,   37,   53,   53,    0,   53,   53,    0,    0,   37,
+       37,   38,   39,   29,   40,   41,   34,   40,   41,   36,
+       42,   45,   27,   42,   45,   39,   47,   37,   48,   47,
+       26,   48,   42,   49,   15,   36,   49,   40,   13,   11,
+       48,   39,   50,   37,   51,   50,   54,   51,   42,   54,
+        8,   49,   52,   40,   50,   52,   48,   55,   56,   57,
+       55,   56,   57,   58,    3,   59,   58,   49,   59,   54,
+       50,   57,    0,   52,   60,   58,    0,   60,    0,    0,
+        0,    0,    0,    0,    0,   54,    0,   57,    0,   52,
+        0,   58,   62,    0,   62,   62,   62,   63,    0,   63,
+       63,   63,   64,   64,   65,   65,   65,   67,   67,   61,
 
-       38,   38,    0,   38,   38,    0,   48,    0,    0,   56,
-       56,   49,   56,   56,    0,    0,    0,   53,   57,   57,
-       38,   57,   57,   60,   60,   38,   60,   60,    0,   61,
-       61,    0,   61,   61,   56,    0,   38,   40,   40,    0,
-       40,   40,    0,   57,    0,    0,    0,    0,   60,    0,
-        0,    0,    0,   40,   61,    0,    0,    0,    0,    0,
-        0,    0,   40,    0,    0,    0,    0,    0,    0,   40,
-       41,   41,    0,   41,   41,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,   41,    0,   41,    0,    0,    0,    0,
-
-        0,    0,    0,    0,    0,    0,    0,    0,    0,   41,
-       43,   43,    0,   43,   43,    0,    0,    0,    0,    0,
-        0,    0,   43,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,   43,    0,    0,   43,   50,
-       50,    0,   50,   50,    0,    0,    0,    0,    0,    0,
-        0,   50,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,   50,    0,    0,   50,   51,   51,
-        0,   51,   51,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,   51,    0,    0,    0,
-        0,    0,    0,   51,    0,    0,    0,    0,    0,    0,
-
-        0,    0,   51,   52,   52,    0,   52,   52,    0,    0,
-        0,    0,    0,    0,    0,   52,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,   52,    0,
-        0,   52,   54,   54,    0,   54,   54,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,   54,    0,    0,    0,   54,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    0,   54,
-       55,   55,    0,   55,   55,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,   55,    0,   55,    0,    0,    0,    0,
-
-        0,    0,    0,    0,    0,    0,    0,    0,    0,   55,
-       58,   58,    0,   58,   58,    0,    0,    0,    0,    0,
-        0,    0,   58,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,    0,   58,    0,    0,   58,   59,
-       59,    0,   59,   59,    0,    0,    0,    0,    0,    0,
-        0,   59,    0,    0,    0,    0,    0,    0,    0,    0,
-        0,    0,    0,    0,   59,    0,    0,   59,   63,    0,
-       63,   63,   63,   65,    0,   65,   65,   65,   66,   66,
-       67,   67,   67,   68,   68,   69,   69,   69,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62,   62,   62,   62,   62,   62,
-       62,   62,   62,   62,   62
+       61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
+       61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
+       61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
+       61,   61,   61,   61,   61,   61,   61,   61,   61,   61,
+       61,   61,   61,   61,   61,   61
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -597,27 +511,14 @@ int yy_flex_debug = 0;
 #define YY_RESTORE_YY_MORE_OFFSET
 char *yytext;
 #line 1 "delete.l"
-#line 6 "delete.l"
+/* Defining neccessary definitions. */
+/*  So only digit cannot be an identifier, must have any other character after it, but identifier can be of only alphabet and $ is omitted, because it is deprecated to use $ can first letter of identifier. */
+#line 12 "delete.l"
     #include <stdio.h>
     #include "y.tab.h"
-    extern FILE *yyin;
-
-    void open_file(void){
-
-        yyin = fopen("test_cases.txt", "r"); 
-
-        if(yyin == NULL){
-            printf("Error opening file.\n");
-            return;
-
-        }
-
-
-
-    }
-
-#line 620 "lex.yy.c"
-#line 621 "lex.yy.c"
+    
+#line 521 "lex.yy.c"
+#line 522 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -834,10 +735,10 @@ YY_DECL
 		}
 
 	{
-#line 27 "delete.l"
+#line 18 "delete.l"
 
 
-#line 841 "lex.yy.c"
+#line 742 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -864,13 +765,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 63 )
+				if ( yy_current_state >= 62 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 589 );
+		while ( yy_base[yy_current_state] != 200 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -896,121 +797,123 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 29 "delete.l"
+#line 20 "delete.l"
 return DELETE;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 31 "delete.l"
+#line 22 "delete.l"
 return FROM;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 33 "delete.l"
+#line 24 "delete.l"
 return WHERE;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 35 "delete.l"
+#line 26 "delete.l"
 return AS; 
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 37 "delete.l"
-return CONDITIONAL_OP;
+#line 28 "delete.l"
+return CONDITIONAL_OP;  /* NOT is not included, because it is a unary operator and to handle the case where the 
+    
+                                conditions can be specified as (NOT condition).  */
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 39 "delete.l"
+#line 33 "delete.l"
 return NOT; 
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 41 "delete.l"
+#line 35 "delete.l"
 return RELATIONAL_OP;
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 43 "delete.l"
+#line 37 "delete.l"
 return NUMBER;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 45 "delete.l"
+#line 39 "delete.l"
 return TEXT;
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 47 "delete.l"
+#line 41 "delete.l"
 return TEXT;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 49 "delete.l"
+#line 43 "delete.l"
 return RELATIONAL_OP;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 50 "delete.l"
+#line 44 "delete.l"
 return RELATIONAL_OP;
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 51 "delete.l"
+#line 45 "delete.l"
 return RELATIONAL_OP;
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 52 "delete.l"
+#line 46 "delete.l"
 return RELATIONAL_OP;
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 53 "delete.l"
+#line 47 "delete.l"
 return RELATIONAL_OP;
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 54 "delete.l"
+#line 48 "delete.l"
 return RELATIONAL_OP;
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 56 "delete.l"
+#line 50 "delete.l"
 return SEMICOLON;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 58 "delete.l"
-return IDENTIFIER;
+#line 52 "delete.l"
+return IDENTIFIER; 
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 60 "delete.l"
-return IDENTIFIER; 
+#line 56 "delete.l"
+return IDENTIFIER; // To handle the case where table_name.column_name
 	YY_BREAK
 case 20:
 /* rule 20 can match eol */
 YY_RULE_SETUP
-#line 63 "delete.l"
+#line 59 "delete.l"
 return NEWLINE;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 66 "delete.l"
+#line 62 "delete.l"
 ;  
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 68 "delete.l"
+#line 64 "delete.l"
 return *yytext;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 70 "delete.l"
+#line 66 "delete.l"
 ECHO;
 	YY_BREAK
-#line 1014 "lex.yy.c"
+#line 917 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1307,7 +1210,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 63 )
+			if ( yy_current_state >= 62 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1335,11 +1238,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 63 )
+		if ( yy_current_state >= 62 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 62);
+	yy_is_jam = (yy_current_state == 61);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -2015,7 +1918,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 70 "delete.l"
+#line 66 "delete.l"
 
 
 
