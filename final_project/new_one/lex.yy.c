@@ -785,131 +785,131 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 31 "delete.l"
-{showToken("DELETE");return DELETE;};
+return DELETE;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
 #line 33 "delete.l"
-{showToken("FROM");return FROM;}
+return FROM;
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
 #line 35 "delete.l"
-{showToken("WHERE");return WHERE;}
+return WHERE;
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
 #line 37 "delete.l"
-{showToken("AS");return AS;} 
+return AS; 
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
 #line 39 "delete.l"
-{showToken("AND");return AND;}
+return AND;
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
 #line 41 "delete.l"
-{showToken("OR");return OR;} 
+return OR; 
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
 #line 44 "delete.l"
-{showToken("NOT");return NOT;} 
+return NOT; 
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
 #line 46 "delete.l"
-{showToken("LIKE");return LIKE;}
+return LIKE;
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
 #line 48 "delete.l"
-{showToken("IN");return IN;} 
+return IN; 
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
 #line 50 "delete.l"
-{showToken("IS");return IS;}
+return IS;
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
 #line 52 "delete.l"
-{showToken("NULL");return NULL_;} 
+return NULL_; 
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
 #line 54 "delete.l"
-{showToken("BETWEEN");return BETWEEN;} 
+return BETWEEN; 
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
 #line 56 "delete.l"
-{showToken("NUMBER");return NUMBER;} // Modified for negative numbers.
+return NUMBER; // Modified for negative numbers.
 	YY_BREAK
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
 #line 58 "delete.l"
-{showToken("IDENTIFIER");return IDENTIFIER;} // If it is quoted, then anything inside it can be identifier. 
+return IDENTIFIER; // If it is quoted, then anything inside it can be identifier. 
 	YY_BREAK
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
 #line 60 "delete.l"
-{showToken("TEXT");return TEXT;} // Modified regex.
+return TEXT; // Modified regex.
 	YY_BREAK
 case 16:
 /* rule 16 can match eol */
 YY_RULE_SETUP
 #line 62 "delete.l"
-{showToken("TEXT");return TEXT;} // Modified regex. 
+return TEXT; // Modified regex. 
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
 #line 64 "delete.l"
-{showToken("RELOP");return RELATIONAL_OP;}
+return RELATIONAL_OP;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
 #line 65 "delete.l"
-{showToken("RELOP");return RELATIONAL_OP;}
+return RELATIONAL_OP;
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
 #line 66 "delete.l"
-{showToken("RELOP");return RELATIONAL_OP;}
+return RELATIONAL_OP;
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
 #line 67 "delete.l"
-{showToken("RELOP");return RELATIONAL_OP;}
+return RELATIONAL_OP;
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
 #line 68 "delete.l"
-{showToken("RELOP");return RELATIONAL_OP;}
+return RELATIONAL_OP;
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
 #line 69 "delete.l"
-{showToken("RELOP");return RELATIONAL_OP;}
+return RELATIONAL_OP;
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
 #line 71 "delete.l"
-{showToken("SEMICOLON");return SEMICOLON;}
+return SEMICOLON;
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
 #line 73 "delete.l"
-{showToken("IDENTIFIER");return IDENTIFIER;} 
+return IDENTIFIER; 
 	YY_BREAK
 case 25:
 /* rule 25 can match eol */
 YY_RULE_SETUP
 #line 75 "delete.l"
-;//{showToken("NEWLINE");return NEWLINE;}
+;
 	YY_BREAK
 case 26:
 YY_RULE_SETUP

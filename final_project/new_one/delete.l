@@ -1,4 +1,3 @@
-
 /* Defining neccessary definitions. */
 /*  So only digit cannot be an identifier, must have any other character after it, but identifier can be of only alphabet. */
 
@@ -80,4 +79,5 @@ identifier ({digit}[a-zA-Z_$]|[a-zA-Z_$])({alphanum}*)
 .           return *yytext;
 
 %%
+
 

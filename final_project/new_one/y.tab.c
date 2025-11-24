@@ -211,17 +211,18 @@ enum yysymbol_kind_t
   YYSYMBOL_23_ = 23,                       /* '.'  */
   YYSYMBOL_24_ = 24,                       /* ','  */
   YYSYMBOL_YYACCEPT = 25,                  /* $accept  */
-  YYSYMBOL_line = 26,                      /* line  */
-  YYSYMBOL_delete = 27,                    /* delete  */
-  YYSYMBOL_from = 28,                      /* from  */
-  YYSYMBOL_table = 29,                     /* table  */
-  YYSYMBOL_where = 30,                     /* where  */
-  YYSYMBOL_conditions = 31,                /* conditions  */
-  YYSYMBOL_condition = 32,                 /* condition  */
-  YYSYMBOL_identifier = 33,                /* identifier  */
-  YYSYMBOL_values = 34,                    /* values  */
-  YYSYMBOL_value = 35,                     /* value  */
-  YYSYMBOL_semicolon = 36                  /* semicolon  */
+  YYSYMBOL_lines = 26,                     /* lines  */
+  YYSYMBOL_line = 27,                      /* line  */
+  YYSYMBOL_delete = 28,                    /* delete  */
+  YYSYMBOL_from = 29,                      /* from  */
+  YYSYMBOL_table = 30,                     /* table  */
+  YYSYMBOL_where = 31,                     /* where  */
+  YYSYMBOL_conditions = 32,                /* conditions  */
+  YYSYMBOL_condition = 33,                 /* condition  */
+  YYSYMBOL_identifier = 34,                /* identifier  */
+  YYSYMBOL_values = 35,                    /* values  */
+  YYSYMBOL_value = 36,                     /* value  */
+  YYSYMBOL_semicolon = 37                  /* semicolon  */
 };
 typedef enum yysymbol_kind_t yysymbol_kind_t;
 
@@ -547,18 +548,18 @@ union yyalloc
 #endif /* !YYCOPY_NEEDED */
 
 /* YYFINAL -- State number of the termination state.  */
-#define YYFINAL  8
+#define YYFINAL  9
 /* YYLAST -- Last index in YYTABLE.  */
-#define YYLAST   75
+#define YYLAST   64
 
 /* YYNTOKENS -- Number of terminals.  */
 #define YYNTOKENS  25
 /* YYNNTS -- Number of nonterminals.  */
-#define YYNNTS  12
+#define YYNNTS  13
 /* YYNRULES -- Number of rules.  */
-#define YYNRULES  35
+#define YYNRULES  38
 /* YYNSTATES -- Number of states.  */
-#define YYNSTATES  65
+#define YYNSTATES  67
 
 /* YYMAXUTOK -- Last valid token kind.  */
 #define YYMAXUTOK   275
@@ -609,10 +610,10 @@ static const yytype_int8 yytranslate[] =
 /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    71,    71,    79,    79,    87,    87,    87,    96,    96,
-      96,    99,   100,   111,   111,   111,   111,   113,   114,   115,
-     116,   117,   118,   119,   120,   121,   122,   123,   126,   126,
-     128,   128,   130,   130,   133,   133
+       0,    71,    71,    72,    73,    75,    80,    80,    88,    88,
+      88,    98,    98,    98,   101,   102,   113,   113,   113,   113,
+     115,   116,   117,   118,   119,   120,   121,   122,   123,   124,
+     125,   128,   128,   130,   130,   132,   132,   135,   135
 };
 #endif
 
@@ -631,9 +632,9 @@ static const char *const yytname[] =
   "\"end of file\"", "error", "\"invalid token\"", "DELETE", "FROM",
   "IDENTIFIER", "WHERE", "LIKE", "RELATIONAL_OP", "SEMICOLON", "TEXT",
   "NUMBER", "NEWLINE", "AS", "NOT", "IN", "IS", "NULL_", "BETWEEN", "AND",
-  "OR", "'('", "')'", "'.'", "','", "$accept", "line", "delete", "from",
-  "table", "where", "conditions", "condition", "identifier", "values",
-  "value", "semicolon", YY_NULLPTR
+  "OR", "'('", "')'", "'.'", "','", "$accept", "lines", "line", "delete",
+  "from", "table", "where", "conditions", "condition", "identifier",
+  "values", "value", "semicolon", YY_NULLPTR
 };
 
 static const char *
@@ -643,12 +644,12 @@ yysymbol_name (yysymbol_kind_t yysymbol)
 }
 #endif
 
-#define YYPACT_NINF (-46)
+#define YYPACT_NINF (-48)
 
 #define yypact_value_is_default(Yyn) \
   ((Yyn) == YYPACT_NINF)
 
-#define YYTABLE_NINF (-36)
+#define YYTABLE_NINF (-39)
 
 #define yytable_value_is_error(Yyn) \
   0
@@ -657,13 +658,13 @@ yysymbol_name (yysymbol_kind_t yysymbol)
    STATE-NUM.  */
 static const yytype_int8 yypact[] =
 {
-      32,   -46,    27,     3,   -46,   -46,    25,   -46,   -46,   -46,
-       8,    16,    22,    34,    -1,   -46,     5,   -46,   -46,   -46,
-      19,     2,   -46,    17,    -6,   -46,   -46,    38,   -46,     2,
-       2,    35,    13,    29,    26,    15,    28,   -46,   -46,   -46,
-     -46,   -46,   -46,   -46,    31,    30,    33,   -46,    36,    37,
-      30,   -46,   -46,    24,    39,   -46,    41,    42,    40,   -46,
-      30,   -46,   -46,   -46,   -46
+      28,   -48,    31,     3,    28,   -48,   -48,    25,   -48,   -48,
+     -48,   -48,     8,    16,    22,    33,    -1,   -48,     5,   -48,
+     -48,   -48,    21,     2,   -48,    19,    -6,   -48,   -48,    40,
+     -48,     2,     2,    36,    13,    34,    26,    20,    30,   -48,
+     -48,   -48,   -48,   -48,   -48,   -48,    27,    32,    35,   -48,
+      37,    38,    32,   -48,   -48,    29,    39,   -48,    43,    44,
+      42,   -48,    32,   -48,   -48,   -48,   -48
 };
 
 /* YYDEFACT[STATE-NUM] -- Default reduction number in state STATE-NUM.
@@ -671,27 +672,27 @@ static const yytype_int8 yypact[] =
    means the default is an error.  */
 static const yytype_int8 yydefact[] =
 {
-       0,     4,     0,     0,     2,     7,     0,     3,     1,    10,
-       8,     0,     0,    12,     0,    34,     0,     6,     9,    16,
-      28,     0,    11,    13,     0,    35,     5,     0,    20,     0,
-       0,     0,     0,     0,     0,     0,     0,    29,    14,    15,
-      23,    18,    17,    19,     0,     0,     0,    21,     0,     0,
-       0,    33,    32,     0,    30,    22,     0,     0,     0,    26,
-       0,    25,    24,    27,    31
+       0,     5,     0,     0,     0,     4,    10,     0,     6,     1,
+       3,    13,    11,     0,     0,    15,     0,    37,     0,     9,
+      12,    19,    31,     0,    14,    16,     0,    38,     8,     0,
+      23,     0,     0,     0,     0,     0,     0,     0,     0,    32,
+      17,    18,    26,    21,    20,    22,     0,     0,     0,    24,
+       0,     0,     0,    36,    35,     0,    33,    25,     0,     0,
+       0,    29,     0,    28,    27,    30,    34
 };
 
 /* YYPGOTO[NTERM-NUM].  */
 static const yytype_int8 yypgoto[] =
 {
-     -46,   -46,   -46,   -46,   -46,   -46,   -46,   -10,    43,   -45,
-     -46,    44
+     -48,    46,   -48,   -48,   -48,   -48,   -48,   -48,   -12,    24,
+     -47,   -48,    41
 };
 
 /* YYDEFGOTO[NTERM-NUM].  */
 static const yytype_int8 yydefgoto[] =
 {
-       0,     3,     4,     7,    11,    16,    22,    23,    24,    53,
-      54,    17
+       0,     3,     4,     5,     8,    13,    18,    24,    25,    26,
+      55,    56,    19
 };
 
 /* YYTABLE[YYPACT[STATE-NUM]] -- What to do in state STATE-NUM.  If
@@ -699,57 +700,55 @@ static const yytype_int8 yydefgoto[] =
    number is the opposite.  If YYTABLE_NINF, syntax error.  */
 static const yytype_int8 yytable[] =
 {
-      19,    31,    32,     8,    20,    58,    25,    20,    33,    34,
-      35,    28,    36,    21,    15,    64,    21,    13,    20,    38,
-      39,    12,    14,    41,    42,    15,     9,    18,     5,    46,
-      10,     6,    47,     1,   -35,     2,    29,    30,    48,    49,
-      51,    52,    27,    37,    44,    40,    59,    45,     0,     0,
-      55,    61,    50,    62,     0,    56,    57,     0,     0,     0,
-      26,     0,    63,    60,     0,     0,     0,     0,     0,     0,
-       0,     0,     0,     0,     0,    43
+      21,    33,    34,     9,    22,    60,    27,    22,    35,    36,
+      37,    30,    38,    23,    17,    66,    23,    15,    22,    40,
+      41,    14,    16,    43,    44,    17,    11,    20,    -2,     1,
+      12,     2,     6,   -38,    48,     7,   -38,    49,    31,    32,
+      50,    51,    53,    54,    29,    39,    42,    47,    52,    46,
+      10,    61,    57,    63,     0,    64,    58,    59,    45,    28,
+       0,     0,     0,    62,    65
 };
 
 static const yytype_int8 yycheck[] =
 {
-       1,     7,     8,     0,     5,    50,     1,     5,    14,    15,
-      16,    21,    18,    14,     9,    60,    14,     1,     5,    29,
-      30,    13,     6,    10,    11,     9,     1,     5,     1,    14,
-       5,     4,    17,     1,     0,     3,    19,    20,    10,    11,
-      10,    11,    23,     5,    15,    10,    22,    21,    -1,    -1,
-      17,    10,    21,    11,    -1,    19,    19,    -1,    -1,    -1,
-      16,    -1,    22,    24,    -1,    -1,    -1,    -1,    -1,    -1,
-      -1,    -1,    -1,    -1,    -1,    32
+       1,     7,     8,     0,     5,    52,     1,     5,    14,    15,
+      16,    23,    18,    14,     9,    62,    14,     1,     5,    31,
+      32,    13,     6,    10,    11,     9,     1,     5,     0,     1,
+       5,     3,     1,     0,    14,     4,     3,    17,    19,    20,
+      10,    11,    10,    11,    23,     5,    10,    21,    21,    15,
+       4,    22,    17,    10,    -1,    11,    19,    19,    34,    18,
+      -1,    -1,    -1,    24,    22
 };
 
 /* YYSTOS[STATE-NUM] -- The symbol kind of the accessing symbol of
    state STATE-NUM.  */
 static const yytype_int8 yystos[] =
 {
-       0,     1,     3,    26,    27,     1,     4,    28,     0,     1,
-       5,    29,    13,     1,     6,     9,    30,    36,     5,     1,
-       5,    14,    31,    32,    33,     1,    36,    23,    32,    19,
-      20,     7,     8,    14,    15,    16,    18,     5,    32,    32,
-      10,    10,    11,    33,    15,    21,    14,    17,    10,    11,
-      21,    10,    11,    34,    35,    17,    19,    19,    34,    22,
-      24,    10,    11,    22,    34
+       0,     1,     3,    26,    27,    28,     1,     4,    29,     0,
+      26,     1,     5,    30,    13,     1,     6,     9,    31,    37,
+       5,     1,     5,    14,    32,    33,    34,     1,    37,    23,
+      33,    19,    20,     7,     8,    14,    15,    16,    18,     5,
+      33,    33,    10,    10,    11,    34,    15,    21,    14,    17,
+      10,    11,    21,    10,    11,    35,    36,    17,    19,    19,
+      35,    22,    24,    10,    11,    22,    35
 };
 
 /* YYR1[RULE-NUM] -- Symbol kind of the left-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr1[] =
 {
-       0,    25,    26,    27,    27,    28,    28,    28,    29,    29,
-      29,    30,    30,    31,    31,    31,    31,    32,    32,    32,
-      32,    32,    32,    32,    32,    32,    32,    32,    33,    33,
-      34,    34,    35,    35,    36,    36
+       0,    25,    26,    26,    27,    27,    28,    28,    29,    29,
+      29,    30,    30,    30,    31,    31,    32,    32,    32,    32,
+      33,    33,    33,    33,    33,    33,    33,    33,    33,    33,
+      33,    34,    34,    35,    35,    36,    36,    37,    37
 };
 
 /* YYR2[RULE-NUM] -- Number of symbols on the right-hand side of rule RULE-NUM.  */
 static const yytype_int8 yyr2[] =
 {
-       0,     2,     1,     2,     1,     4,     3,     1,     1,     3,
-       1,     2,     1,     1,     3,     3,     1,     3,     3,     3,
-       2,     3,     4,     3,     5,     5,     5,     6,     1,     3,
-       1,     3,     1,     1,     1,     1
+       0,     2,     0,     2,     1,     1,     2,     1,     4,     3,
+       1,     1,     3,     1,     2,     1,     1,     3,     3,     1,
+       3,     3,     3,     2,     3,     4,     3,     5,     5,     5,
+       6,     1,     3,     1,     3,     1,     1,     1,     1
 };
 
 
@@ -1212,54 +1211,59 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 2: /* line: delete  */
-#line 71 "delete.y"
+  case 4: /* line: delete  */
+#line 73 "delete.y"
              {printf("Syntax Correct\n"); 
 
-    
-
-}
-#line 1223 "y.tab.c"
+            printf("mysql>"); }
+#line 1220 "y.tab.c"
     break;
 
-  case 4: /* delete: error  */
-#line 79 "delete.y"
-                             {yyerror(" : Did you mean \"DELETE\" ? \n"); return 1; }
-#line 1229 "y.tab.c"
+  case 5: /* line: error  */
+#line 75 "delete.y"
+                                        {yyerror(": Invalid Statement.\n"); printf("mysql>"); yyerrok; }
+#line 1226 "y.tab.c"
     break;
 
-  case 7: /* from: error  */
-#line 87 "delete.y"
-                                                                   {yyerror("   : Did you mean \" FROM \" ? \n"); return 1; }
-#line 1235 "y.tab.c"
+  case 7: /* delete: error  */
+#line 80 "delete.y"
+                             {yyerror(" : Did you mean \"DELETE\" ? \n"); printf("mysql>");}
+#line 1232 "y.tab.c"
     break;
 
-  case 10: /* table: error  */
-#line 96 "delete.y"
-                                                      {yyerror(" : table name is missing.\n"); return 1; }
-#line 1241 "y.tab.c"
+  case 10: /* from: error  */
+#line 88 "delete.y"
+                                                                   {yyerror("   : Did you mean \" FROM \" ? \n"); 
+printf("mysql>");}
+#line 1239 "y.tab.c"
     break;
 
-  case 12: /* where: error  */
-#line 100 "delete.y"
-      {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; }
-#line 1247 "y.tab.c"
+  case 13: /* table: error  */
+#line 98 "delete.y"
+                                                      {yyerror(" : table name is missing.\n"); printf("mysql>"); }
+#line 1245 "y.tab.c"
     break;
 
-  case 16: /* conditions: error  */
-#line 111 "delete.y"
-                                                                                   {yyerror(": Condition issue\n"); return 1; }
-#line 1253 "y.tab.c"
+  case 15: /* where: error  */
+#line 102 "delete.y"
+      {yyerror(" : Did you mean \" WHERE \" ? \n"); printf("mysql>"); }
+#line 1251 "y.tab.c"
     break;
 
-  case 35: /* semicolon: error  */
-#line 133 "delete.y"
-                              {yyerror(" : Missing semicolon \";\" \n"); return 1; }
-#line 1259 "y.tab.c"
+  case 19: /* conditions: error  */
+#line 113 "delete.y"
+                                                                                   {yyerror(": Condition issue\n"); printf("mysql>"); }
+#line 1257 "y.tab.c"
     break;
 
-
+  case 38: /* semicolon: error  */
+#line 135 "delete.y"
+                              {yyerror(" : Missing semicolon \";\" \n"); printf("mysql>"); }
 #line 1263 "y.tab.c"
+    break;
+
+
+#line 1267 "y.tab.c"
 
       default: break;
     }
@@ -1452,7 +1456,7 @@ yyreturnlab:
   return yyresult;
 }
 
-#line 136 "delete.y"
+#line 138 "delete.y"
 
 
 
@@ -1472,5 +1476,5 @@ void yyerror(const char* s){
 }
 
 int yywrap(){
-    return 0; 
+    return 1; 
 }
