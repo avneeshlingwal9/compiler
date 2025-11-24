@@ -19,7 +19,7 @@ Including the neccessary headers.
 
 */
 
-%token DELETE FROM IDENTIFIER WHERE CONDITIONAL_OP RELATIONAL_OP SEMICOLON TEXT NUMBER NEWLINE AS NOT
+%token DELETE FROM IDENTIFIER WHERE CONDITIONAL_OP RELATIONAL_OP SEMICOLON TEXT NUMBER NEWLINE AS NOT IN IS NULL_ BETWEEN AND OR
 
 
 
@@ -94,7 +94,6 @@ from : FROM table where | FROM table semicolon NEWLINE |  error {yyerror("   : D
 table : IDENTIFIER | IDENTIFIER AS IDENTIFIER | error {yyerror(" : table name is missing.\n"); return 1; };
 
 
-
 where : WHERE condition semicolon NEWLINE | 
 error {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; };
 
@@ -107,21 +106,26 @@ error {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; };
 
 */
 
-condition : IDENTIFIER RELATIONAL_OP IDENTIFIER |
-            IDENTIFIER RELATIONAL_OP TEXT |
-            IDENTIFIER RELATIONAL_OP NUMBER |
-            NUMBER RELATIONAL_OP NUMBER |   
-            IDENTIFIER RELATIONAL_OP IDENTIFIER CONDITIONAL_OP condition | 
-            IDENTIFIER RELATIONAL_OP TEXT CONDITIONAL_OP condition |
-            IDENTIFIER RELATIONAL_OP NUMBER CONDITIONAL_OP condition |
+condition : identifier RELATIONAL_OP identifier |
+            identifier RELATIONAL_OP TEXT |
+            identifier RELATIONAL_OP NUMBER |  
+            identifier RELATIONAL_OP identifier CONDITIONAL_OP condition | 
+            identifier RELATIONAL_OP TEXT CONDITIONAL_OP condition |
+            identifier RELATIONAL_OP NUMBER CONDITIONAL_OP condition |
             NUMBER RELATIONAL_OP NUMBER CONDITIONAL_OP condition | 
             NOT condition | 
+            
+
+
+
 
             error {
                 
                 yyerror(" : Incorrect Condtion \n");
                 return 1; 
             };
+
+identifier : IDENTIFIER | IDENTIFIER'.'IDENTIFIER | error {yyerror(": Missing identifier in condition. \n");};
 
 semicolon : SEMICOLON | error {yyerror(" : Missing semicolon \";\" \n"); return 1; };
 
