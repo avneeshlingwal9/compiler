@@ -8,60 +8,71 @@ alphabets [a-zA-Z]
 alphanum ({alphabets}|{digit}|"_"|"$")
 identifier ({digit}[a-zA-Z_$]|[a-zA-Z_$])({alphanum}*) 
 
+
+
 %{
     #include <stdio.h>
     #include "y.tab.h"
+
+    void showToken(const char *s){
+
+    printf("Lexeme for token %s is %s\n", s, yytext); 
+
+}
+    
     
 %}
 
 
+
+
 %%
 
-[dD][eE][lL][eE][tT][eE]  return DELETE;
+[dD][eE][lL][eE][tT][eE]  {showToken("DELETE");return DELETE;};
 
-[fF][rR][oO][mM]   return FROM;
+[fF][rR][oO][mM]   {showToken("FROM");return FROM;}
 
-[wW][hH][eE][rR][eE] return WHERE;
+[wW][hH][eE][rR][eE] {showToken("WHERE");return WHERE;}
 
-[aA][sS]    return AS; 
+[aA][sS]    {showToken("AS");return AS;} 
 
-[aA][nN][dD]  return AND;
+[aA][nN][dD]  {showToken("AND");return AND;}
 
-[oO][rR] return OR; 
+[oO][rR] {showToken("OR");return OR;} 
 
 
-[nN][oO][tT] return NOT; 
+[nN][oO][tT] {showToken("NOT");return NOT;} 
 
-[lL][iI][kK][eE]    return RELATIONAL_OP;
+[lL][iI][kK][eE]    {showToken("LIKE");return LIKE;}
 
-[Ii][Nn]            return IN; 
+[Ii][Nn]            {showToken("IN");return IN;} 
 
-[Ii][Ss]            return IS;
+[Ii][Ss]            {showToken("IS");return IS;}
 
-[Nn][uU][lL][lL]    return NULL_; 
+[Nn][uU][lL][lL]    {showToken("NULL");return NULL_;} 
 
-[bB][eE][tT][wW][Ee][Ee][Nn] return BETWEEN; 
+[bB][eE][tT][wW][Ee][Ee][Nn] {showToken("BETWEEN");return BETWEEN;} 
 
-[-]+{digit}+     return NUMBER; // Modified for negative numbers.
+[-]*{digit}+     {showToken("NUMBER");return NUMBER;} // Modified for negative numbers.
 
-\`[^\`]+\`     return IDENTIFIER; // If it is quoted, then anything inside it can be identifier. 
+\`[^\`]+\`     {showToken("IDENTIFIER");return IDENTIFIER;} // If it is quoted, then anything inside it can be identifier. 
 
-\"(\\\"|[^"])*\" return TEXT; // Modified regex.
+\"(\\\"|[^"])*\" {showToken("TEXT");return TEXT;} // Modified regex.
 
-\'(\\\'|[^'])*\' return TEXT; // Modified regex. 
+\'(\\\'|[^'])*\' {showToken("TEXT");return TEXT;} // Modified regex. 
 
-"<"        return RELATIONAL_OP;
-">"         return RELATIONAL_OP;
-"<="        return RELATIONAL_OP;
-">="        return RELATIONAL_OP;
-"="        return RELATIONAL_OP;
-"!="        return RELATIONAL_OP;
+"<"        {showToken("RELOP");return RELATIONAL_OP;}
+">"        {showToken("RELOP");return RELATIONAL_OP;}
+"<="       {showToken("RELOP");return RELATIONAL_OP;}
+">="       {showToken("RELOP");return RELATIONAL_OP;}
+"="        {showToken("RELOP");return RELATIONAL_OP;}
+"!="       {showToken("RELOP");return RELATIONAL_OP;}
 
-";"         return SEMICOLON;
+";"        {showToken("SEMICOLON");return SEMICOLON;}
 
-{identifier} return IDENTIFIER; 
+{identifier} {showToken("IDENTIFIER");return IDENTIFIER;} 
 
-\n          return NEWLINE;
+\n          {showToken("NEWLINE");return NEWLINE;}
 
 
 [ \t]  ;  

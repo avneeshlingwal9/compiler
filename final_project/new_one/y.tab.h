@@ -58,14 +58,20 @@ extern int yydebug;
     FROM = 259,                    /* FROM  */
     IDENTIFIER = 260,              /* IDENTIFIER  */
     WHERE = 261,                   /* WHERE  */
-    CONDITIONAL_OP = 262,          /* CONDITIONAL_OP  */
+    LIKE = 262,                    /* LIKE  */
     RELATIONAL_OP = 263,           /* RELATIONAL_OP  */
     SEMICOLON = 264,               /* SEMICOLON  */
     TEXT = 265,                    /* TEXT  */
     NUMBER = 266,                  /* NUMBER  */
     NEWLINE = 267,                 /* NEWLINE  */
     AS = 268,                      /* AS  */
-    NOT = 269                      /* NOT  */
+    NOT = 269,                     /* NOT  */
+    IN = 270,                      /* IN  */
+    IS = 271,                      /* IS  */
+    NULL_ = 272,                   /* NULL_  */
+    BETWEEN = 273,                 /* BETWEEN  */
+    AND = 274,                     /* AND  */
+    OR = 275                       /* OR  */
   };
   typedef enum yytokentype yytoken_kind_t;
 #endif
@@ -78,7 +84,7 @@ extern int yydebug;
 #define FROM 259
 #define IDENTIFIER 260
 #define WHERE 261
-#define CONDITIONAL_OP 262
+#define LIKE 262
 #define RELATIONAL_OP 263
 #define SEMICOLON 264
 #define TEXT 265
@@ -86,6 +92,12 @@ extern int yydebug;
 #define NEWLINE 267
 #define AS 268
 #define NOT 269
+#define IN 270
+#define IS 271
+#define NULL_ 272
+#define BETWEEN 273
+#define AND 274
+#define OR 275
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED

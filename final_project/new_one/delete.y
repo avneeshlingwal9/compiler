@@ -19,8 +19,10 @@ Including the neccessary headers.
 
 */
 
-%token DELETE FROM IDENTIFIER WHERE CONDITIONAL_OP RELATIONAL_OP SEMICOLON TEXT NUMBER NEWLINE AS NOT IN IS NULL_ BETWEEN AND OR
+%token DELETE FROM IDENTIFIER WHERE LIKE RELATIONAL_OP SEMICOLON TEXT NUMBER NEWLINE AS NOT IN IS NULL_ BETWEEN AND OR
 
+%left OR 
+%left AND
 
 
 %%
@@ -36,7 +38,7 @@ Including the neccessary headers.
 
     table : IDENTIFIER | IDENTIFIER AS IDENTIFIER | error 
 
-    where: WHERE condition semicolon NEWLINE | error 
+    where: WHERE conditions semicolon NEWLINE | error 
 
     condition : IDENTIFIER RELATIONAL_OP IDENTIFIER 
 
@@ -68,7 +70,7 @@ Including the neccessary headers.
 */
 line: delete {printf("Syntax Correct\n"); 
 
-    return 0;
+    
 
 };
 
@@ -82,7 +84,7 @@ delete : DELETE from | error {yyerror(" : Did you mean \"DELETE\" ? \n"); return
     2. When no condition is specified. 
 */
 
-from : FROM table where | FROM table semicolon NEWLINE |  error {yyerror("   : Did you mean \" FROM \" ? \n"); return 1; }; 
+from : FROM table where semicolon | FROM table semicolon  |  error {yyerror("   : Did you mean \" FROM \" ? \n"); return 1; }; 
 
 /*
     Covering two cases of table name:
@@ -94,7 +96,7 @@ from : FROM table where | FROM table semicolon NEWLINE |  error {yyerror("   : D
 table : IDENTIFIER | IDENTIFIER AS IDENTIFIER | error {yyerror(" : table name is missing.\n"); return 1; };
 
 
-where : WHERE condition semicolon NEWLINE | 
+where : WHERE conditions | 
 error {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; };
 
 /*
@@ -106,31 +108,34 @@ error {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; };
 
 */
 
-condition : identifier RELATIONAL_OP identifier |
+conditions : condition | condition AND condition | condition OR condition |  error {yyerror(": Condition issue\n"); return 1; };
+
+condition : identifier RELATIONAL_OP NUMBER |
             identifier RELATIONAL_OP TEXT |
-            identifier RELATIONAL_OP NUMBER |  
-            identifier RELATIONAL_OP identifier CONDITIONAL_OP condition | 
-            identifier RELATIONAL_OP TEXT CONDITIONAL_OP condition |
-            identifier RELATIONAL_OP NUMBER CONDITIONAL_OP condition |
-            NUMBER RELATIONAL_OP NUMBER CONDITIONAL_OP condition | 
+            identifier RELATIONAL_OP identifier |  
             NOT condition | 
-            
+            identifier IS NULL_ | 
+            identifier IS NOT NULL_ | 
+            identifier LIKE TEXT | 
+            identifier BETWEEN NUMBER AND NUMBER |
+            identifier BETWEEN TEXT AND TEXT |
+            identifier IN '('values')'|
+            identifier NOT IN '('values')'
+            ;
 
+identifier : IDENTIFIER | IDENTIFIER'.'IDENTIFIER ;
 
+values: value | value ',' values ; 
 
+value : NUMBER | TEXT ; 
 
-            error {
-                
-                yyerror(" : Incorrect Condtion \n");
-                return 1; 
-            };
-
-identifier : IDENTIFIER | IDENTIFIER'.'IDENTIFIER | error {yyerror(": Missing identifier in condition. \n");};
 
 semicolon : SEMICOLON | error {yyerror(" : Missing semicolon \";\" \n"); return 1; };
 
 
 %%
+
+
 
 int main(void){
 
@@ -147,5 +152,5 @@ void yyerror(const char* s){
 }
 
 int yywrap(){
-    return 1; 
+    return 0; 
 }
