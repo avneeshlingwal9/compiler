@@ -493,7 +493,7 @@ char *yytext;
 #line 1 "delete.l"
 /* Defining neccessary definitions. */
 /*  So only digit cannot be an identifier, must have any other character after it, but identifier can be of only alphabet. */
-#line 14 "delete.l"
+#line 13 "delete.l"
     #include <stdio.h>
     #include "y.tab.h"
 
@@ -722,7 +722,7 @@ YY_DECL
 		}
 
 	{
-#line 29 "delete.l"
+#line 28 "delete.l"
 
 
 #line 729 "lex.yy.c"
@@ -784,146 +784,146 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 31 "delete.l"
-return DELETE;
+#line 30 "delete.l"
+{showToken("DELETE");return DELETE;};
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
-#line 33 "delete.l"
-return FROM;
+#line 32 "delete.l"
+{showToken("FROM");return FROM;}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 35 "delete.l"
-return WHERE;
+#line 34 "delete.l"
+{showToken("WHERE");return WHERE;}
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 37 "delete.l"
-return AS; 
+#line 36 "delete.l"
+{showToken("AS");return AS;} 
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 39 "delete.l"
-return AND;
+#line 38 "delete.l"
+{showToken("AND");return AND;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 41 "delete.l"
-return OR; 
+#line 40 "delete.l"
+{showToken("OR");return OR;} 
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 44 "delete.l"
-return NOT; 
+#line 43 "delete.l"
+{showToken("NOT");return NOT;} 
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 46 "delete.l"
-return LIKE;
+#line 45 "delete.l"
+{showToken("LIKE");return LIKE;}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 48 "delete.l"
-return IN; 
+#line 47 "delete.l"
+{showToken("IN");return IN;} 
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 50 "delete.l"
-return IS;
+#line 49 "delete.l"
+{showToken("IS");return IS;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 52 "delete.l"
-return NULL_; 
+#line 51 "delete.l"
+{showToken("NULL");return NULL_;} 
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 54 "delete.l"
-return BETWEEN; 
+#line 53 "delete.l"
+{showToken("BETWEEN");return BETWEEN;} 
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 56 "delete.l"
-return NUMBER; // Modified for negative numbers.
+#line 55 "delete.l"
+{showToken("NUMBER");return NUMBER;} // Modified for negative numbers.
 	YY_BREAK
 case 14:
 /* rule 14 can match eol */
 YY_RULE_SETUP
-#line 58 "delete.l"
-return IDENTIFIER; // If it is quoted, then anything inside it can be identifier. 
+#line 57 "delete.l"
+{showToken("IDENTIFIER");return IDENTIFIER;} // If it is quoted, then anything inside it can be identifier. 
 	YY_BREAK
 case 15:
 /* rule 15 can match eol */
 YY_RULE_SETUP
-#line 60 "delete.l"
-return TEXT; // Modified regex.
+#line 59 "delete.l"
+{showToken("TEXT");return TEXT;} // Modified regex.
 	YY_BREAK
 case 16:
 /* rule 16 can match eol */
 YY_RULE_SETUP
-#line 62 "delete.l"
-return TEXT; // Modified regex. 
+#line 61 "delete.l"
+{showToken("TEXT");return TEXT;} // Modified regex. 
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 64 "delete.l"
-return RELATIONAL_OP;
+#line 63 "delete.l"
+{showToken("RELOP");return RELATIONAL_OP;}
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 65 "delete.l"
-return RELATIONAL_OP;
+#line 64 "delete.l"
+{showToken("RELOP");return RELATIONAL_OP;}
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 66 "delete.l"
-return RELATIONAL_OP;
+#line 65 "delete.l"
+{showToken("RELOP");return RELATIONAL_OP;}
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 67 "delete.l"
-return RELATIONAL_OP;
+#line 66 "delete.l"
+{showToken("RELOP");return RELATIONAL_OP;}
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 68 "delete.l"
-return RELATIONAL_OP;
+#line 67 "delete.l"
+{showToken("RELOP");return RELATIONAL_OP;}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 69 "delete.l"
-return RELATIONAL_OP;
+#line 68 "delete.l"
+{showToken("RELOP");return RELATIONAL_OP;}
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 71 "delete.l"
-return SEMICOLON;
+#line 70 "delete.l"
+{showToken("SEMICOLON");return SEMICOLON;}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 73 "delete.l"
-return IDENTIFIER; 
+#line 72 "delete.l"
+{showToken("IDENTIFIER");return IDENTIFIER;} 
 	YY_BREAK
 case 25:
 /* rule 25 can match eol */
 YY_RULE_SETUP
-#line 75 "delete.l"
-;
+#line 74 "delete.l"
+{showToken("NEWLINE");return NEWLINE;}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 78 "delete.l"
+#line 77 "delete.l"
 ;  
 	YY_BREAK
 case 27:
 YY_RULE_SETUP
-#line 80 "delete.l"
+#line 79 "delete.l"
 return *yytext;
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 82 "delete.l"
+#line 81 "delete.l"
 ECHO;
 	YY_BREAK
 #line 930 "lex.yy.c"
@@ -1931,7 +1931,8 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 82 "delete.l"
+#line 81 "delete.l"
+
 
 
 

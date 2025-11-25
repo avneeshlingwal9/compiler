@@ -40,25 +40,40 @@ Including the neccessary headers.
 
     where: WHERE conditions semicolon NEWLINE | error 
 
-    condition : IDENTIFIER RELATIONAL_OP IDENTIFIER 
+    conditions : condition | condition AND condition | condition OR condition |  error 
 
-	    | IDENTIFIER RELATIONAL_OP TEXT 
+    condition : identifier RELATIONAL_OP NUMBER |
 
-	    | IDENTIFIER RELATIONAL_OP NUMBER 
+            identifier RELATIONAL_OP TEXT |
 
-	    | IDENTIFIER RELATIONAL_OP IDENTIFIER CONDITIONAL_OP condition
+            identifier RELATIONAL_OP identifier |  
 
-	    | IDENTIFIER RELATIONAL_OP TEXT CONDITIONAL_OP condition
+            NOT condition | 
 
-	    | IDENTIFIER RELATIONAL_OP NUMBER CONDITIONAL_OP condition
+            identifier IS NULL_ | 
 
-	    | NUMBER RELATIONAL_OP NUMBER 
+            identifier IS NOT NULL_ | 
 
-	    | NUMBER RELATIONAL_OP NUMBER CONDITIONAL_OP condition 
+            identifier LIKE TEXT | 
+            identifier BETWEEN NUMBER AND NUMBER |
 
-	    | NOT condition
+            identifier BETWEEN TEXT AND TEXT |
 
-	    | error 
+            identifier IN '('values')'|
+
+            identifier NOT IN '('values')'
+
+    identifier : IDENTIFIER | 
+                
+            IDENTIFIER'.'IDENTIFIER 
+
+    
+    values: value | value ',' values  
+
+    value : NUMBER | TEXT 
+
+    semicolon : SEMICOLON | error
+    
 
 
 
@@ -68,11 +83,7 @@ Including the neccessary headers.
 /*
     Initial Rule. 
 */
-line: delete {printf("Syntax Correct\n"); 
-
-    
-
-};
+line: delete {printf("Syntax Correct\n"); return 0;};
 
 
 
@@ -84,7 +95,7 @@ delete : DELETE from | error {yyerror(" : Did you mean \"DELETE\" ? \n"); return
     2. When no condition is specified. 
 */
 
-from : FROM table where semicolon | FROM table semicolon  |  error {yyerror("   : Did you mean \" FROM \" ? \n"); return 1; }; 
+from : FROM table where | FROM table semicolon NEWLINE |  error {yyerror("   : Did you mean \" FROM \" ? \n"); return 1; }; 
 
 /*
     Covering two cases of table name:
@@ -96,20 +107,16 @@ from : FROM table where semicolon | FROM table semicolon  |  error {yyerror("   
 table : IDENTIFIER | IDENTIFIER AS IDENTIFIER | error {yyerror(" : table name is missing.\n"); return 1; };
 
 
-where : WHERE conditions | 
-error {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; };
+where : WHERE conditions semicolon NEWLINE | error {yyerror(" : Did you mean \" WHERE \" ? \n"); return 1; };
 
-/*
-    Covering the cases of different conditions that can be specified.
-    
-    1 - 4 are self explainatory. 
-    5 - 8 covers the cases where rules [1,4] are appended with an conditional operator and another condition.
-    9 covers the case where we can apply NOT operator in front of a conditional statement. 
-
-*/
+/* Compound conditions  */
 
 conditions : condition | condition AND condition | condition OR condition |  error {yyerror(": Condition issue\n"); return 1; };
 
+/* 
+    Singular condition statement. 
+
+*/
 condition : identifier RELATIONAL_OP NUMBER |
             identifier RELATIONAL_OP TEXT |
             identifier RELATIONAL_OP identifier |  
@@ -123,9 +130,20 @@ condition : identifier RELATIONAL_OP NUMBER |
             identifier NOT IN '('values')'
             ;
 
+
+/*
+
+    Handling the case of table_name.column_name
+
+*/
+
 identifier : IDENTIFIER | IDENTIFIER'.'IDENTIFIER ;
 
+/* List of values for IN. */
+
 values: value | value ',' values ; 
+
+/* Singular value in list of values. */
 
 value : NUMBER | TEXT ; 
 
@@ -152,5 +170,5 @@ void yyerror(const char* s){
 }
 
 int yywrap(){
-    return 0; 
+    return 1; 
 }

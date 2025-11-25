@@ -12,14 +12,7 @@ identifier ({digit}[a-zA-Z_$]|[a-zA-Z_$])({alphanum}*)
 %{
     #include <stdio.h>
     #include "y.tab.h"
-
-    void showToken(const char *s){
-
-    printf("Lexeme for token %s is %s\n", s, yytext); 
-
-}
-    
-    
+     
 %}
 
 
@@ -27,51 +20,51 @@ identifier ({digit}[a-zA-Z_$]|[a-zA-Z_$])({alphanum}*)
 
 %%
 
-[dD][eE][lL][eE][tT][eE]  {showToken("DELETE");return DELETE;};
+[dD][eE][lL][eE][tT][eE]  return DELETE;
 
-[fF][rR][oO][mM]   {showToken("FROM");return FROM;}
+[fF][rR][oO][mM]   return FROM;
 
-[wW][hH][eE][rR][eE] {showToken("WHERE");return WHERE;}
+[wW][hH][eE][rR][eE] return WHERE;
 
-[aA][sS]    {showToken("AS");return AS;} 
+[aA][sS]    return AS; 
 
-[aA][nN][dD]  {showToken("AND");return AND;}
+[aA][nN][dD]  return AND;
 
-[oO][rR] {showToken("OR");return OR;} 
+[oO][rR]    return OR;
 
 
-[nN][oO][tT] {showToken("NOT");return NOT;} 
+[nN][oO][tT] return NOT; 
 
-[lL][iI][kK][eE]    {showToken("LIKE");return LIKE;}
+[lL][iI][kK][eE]    return LIKE;
 
-[Ii][Nn]            {showToken("IN");return IN;} 
+[Ii][Nn]            return IN; 
 
-[Ii][Ss]            {showToken("IS");return IS;}
+[Ii][Ss]            return IS;
 
-[Nn][uU][lL][lL]    {showToken("NULL");return NULL_;} 
+[Nn][uU][lL][lL]    return NULL_; 
 
-[bB][eE][tT][wW][Ee][Ee][Nn] {showToken("BETWEEN");return BETWEEN;} 
+[bB][eE][tT][wW][Ee][Ee][Nn] return BETWEEN; 
 
-[-]*{digit}+     {showToken("NUMBER");return NUMBER;} // Modified for negative numbers.
+[-]*{digit}+     return NUMBER; // Modified for negative numbers.
 
-\`[^\`]+\`     {showToken("IDENTIFIER");return IDENTIFIER;} // If it is quoted, then anything inside it can be identifier. 
+\`[^\`]+\`     return IDENTIFIER; // If it is quoted, then anything inside it can be identifier. 
 
-\"(\\\"|[^"])*\" {showToken("TEXT");return TEXT;} // Modified regex.
+\"(\\\"|[^"])*\" return TEXT; // Modified regex.
 
-\'(\\\'|[^'])*\' {showToken("TEXT");return TEXT;} // Modified regex. 
+\'(\\\'|[^'])*\' return TEXT; // Modified regex. 
 
-"<"        {showToken("RELOP");return RELATIONAL_OP;}
-">"        {showToken("RELOP");return RELATIONAL_OP;}
-"<="       {showToken("RELOP");return RELATIONAL_OP;}
-">="       {showToken("RELOP");return RELATIONAL_OP;}
-"="        {showToken("RELOP");return RELATIONAL_OP;}
-"!="       {showToken("RELOP");return RELATIONAL_OP;}
+"<"        return RELATIONAL_OP;
+">"        return RELATIONAL_OP;
+"<="       return RELATIONAL_OP;
+">="       return RELATIONAL_OP;
+"="        return RELATIONAL_OP;
+"!="       return RELATIONAL_OP;
 
-";"        {showToken("SEMICOLON");return SEMICOLON;}
+";"        return SEMICOLON;
 
-{identifier} {showToken("IDENTIFIER");return IDENTIFIER;} 
+{identifier} return IDENTIFIER; 
 
-\n          {showToken("NEWLINE");return NEWLINE;}
+\n          return NEWLINE;
 
 
 [ \t]  ;  
